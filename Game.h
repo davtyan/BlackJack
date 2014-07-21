@@ -34,8 +34,8 @@ private:
     Participant** players;
     int participants_num;
     Deck* game_deck;
-    const int min_bet = 1; //need to beet at least one chip
-    const int max_bet = 10; // maximum allowed bet is 10 times the minimum
+    const int min_bet; //need to beet at least one chip
+    const int max_bet; // maximum allowed bet is 10 times the minimum
     enum game_outcome {won, lost, push, black_jack};
 };
 
