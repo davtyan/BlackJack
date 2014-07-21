@@ -8,6 +8,7 @@
 
 #include "Game.h"
 #include "Common.h"
+#include<algorithm>
 
 Game::Game(int d_size, int num_part) : min_bet(1), max_bet(10)
 {
@@ -61,7 +62,7 @@ bool Game::anotherPlay()
     cout << "Do you want to play again? (yes or no): ";
     cin >> s;
     
-    transform(s.begin(), s.end(), s.begin(), ::tolower);
+    transform(s.begin(), s.end(), s.begin(), (int (*)(int))tolower); // cast the last argument to help the comp\iler in resolving to the correct overload                            
     
     while (!coorect_choice) {
         if (s == "yes" || s == "no")
@@ -70,7 +71,7 @@ bool Game::anotherPlay()
         {
             cout <<s<<" is not a valid option, please enter 'yes' or 'no'!";
             cin >>s;
-            transform(s.begin(), s.end(), s.begin(), ::tolower);
+            transform(s.begin(), s.end(), s.begin(), (int (*)(int))tolower);
         }
     }
     // if yes then player wants to play

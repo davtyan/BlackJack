@@ -9,6 +9,9 @@
 #include "Deck.h"
 #include <time.h>
 #include <stdlib.h>
+#ifndef HAVE_SRANDOMDEV
+#define sranddev() srand((unsigned) time(NULL))
+#endif
 
 // generate a new deck of cards and shuffle it
 Deck::Deck(int d_num) : num_decks(d_num)

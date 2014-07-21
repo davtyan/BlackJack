@@ -7,16 +7,12 @@
 //
 
 #include "Player.h"
+#include <algorithm>
 
 Player::Player(int c)
 {
     chips = c;
 }
-
-/*Player::~Player()
-{
-    freeHand();
-}*/
 
 
 double Player::getChips()
@@ -65,7 +61,7 @@ string Player::nextMove()
     cout << "Hit or Stand?" <<endl;
     cin >> s;
     
-    transform(s.begin(), s.end(), s.begin(), ::tolower);
+    transform(s.begin(), s.end(), s.begin(), (int (*)(int))tolower); // cast the last argument to help the compiler in resolving to the correct overload
     
     while (!coorect_choice) {
         if (s == "hit" || s == "stand")

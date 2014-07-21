@@ -1,5 +1,5 @@
 #define a compiler (name it CC)
-CC = C++
+CC = c++
 HEADERS =  Common.h Dealer.h Deck.h Game.h Participant.h Player.h
 SOURCES = Dealer.cpp Deck.cpp Game.cpp Participant.cpp Player.cpp main.cpp 
 OBJECTS = $(SOURCES:.C=.o)
