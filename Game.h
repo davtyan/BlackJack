@@ -18,7 +18,7 @@ using namespace std;
 
 class Game{
 public:
-    Game(int = 1, int = 2); // specify the deck size (default is 1); specify the number of participants (by default 1 dealer and 1 player)
+    Game(int = 1, int = 2, int = 10); // specify the deck size (default is 1); specify the number of participants (by default 1 dealer and 1 player); the third argument is the maximum number of chips allowed to bet default is 10
     ~Game();
     void initialDeal(); //deal two cards to the player and to the Dealer
     void dealerMove();

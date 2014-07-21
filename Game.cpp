@@ -10,7 +10,7 @@
 #include "Common.h"
 #include<algorithm>
 
-Game::Game(int d_size, int num_part) : min_bet(1), max_bet(10)
+Game::Game(int d_size, int num_part, int m_bet) : min_bet(1), max_bet(m_bet)
 {
     // initialize a new deck, by default 1 deck is used
     game_deck = new Deck(d_size);
