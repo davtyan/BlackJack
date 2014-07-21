@@ -150,7 +150,7 @@ void Game::startNewGame()
     bool bj_p, another_play = true;
     int hand_val;
     
-    while (another_play && players[1]->getChips() > 0) {
+    while (another_play) {
         // free the hands of the Dealer and the player
         players[0]->freeHand();
         for (i=1; i < participants_num; i++) {
@@ -213,7 +213,11 @@ void Game::startNewGame()
             }
             announceWinner();
         }
-        // ask if player wants to continue to play
-        another_play = anotherPlay();
+        // no chips remaining
+        if (players[1]->getChips() == 0)
+            another_play = false;
+        else
+            // ask if player wants to continue to play
+            another_play = anotherPlay();
     }
 }
